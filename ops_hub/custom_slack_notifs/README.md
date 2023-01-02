@@ -18,11 +18,23 @@ The basic concept of the script I've written would work for any object in HubSpo
 
 ### Secrets
 
+I've tried to make this code as plug and play as possible by leveraging HubSpot _Secrets_ to set env variables—that way you won't need to edit the code except for things you need to change (i.e. proprieties, json elements in the Slack payload, etc.).
+
+You'll want to start by creating (adding) your secrets
+
 ![create secret screenshot](images/create_secret.png)
 
-### Property to include in code
+![workflow selected secrets screenshot](images/slack_webhook_secret.png)
 
-screenies
+After you've created your secrets, make sure you select all the ones you plan to call/use in the script
+
+![workflow selected secrets screenshot](images/selected_secrets.png)
+
+### Properties to include in the script
+
+In the screenshot below are the properties I included in the code. Change these according to your own needs, but remember you'll want to update the references in the script below to match/include whatever changes you make.
+
+![properties in code screenshot](images/props_in_code.png)
 
 ### Code
 
@@ -248,3 +260,9 @@ def main(event):
   }
  }
 ```
+
+### Data outputs
+
+You don't need to include data outputs in your script if you don't need to use the outputs for anything. I left them here in case I wanted to use them in downstream actions, or to ensure I was getting the outputs I expected—_you could also just use python to print all these variable values_ 🤷
+
+![data outputs from script screenshot](images/data_outputs.png)

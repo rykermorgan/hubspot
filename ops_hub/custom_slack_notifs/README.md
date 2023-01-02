@@ -4,6 +4,8 @@ This is a quick rundown on how to use HubSpot custom code actions in a workflow 
 
 _HubSpot has native support for Slack, but the notifications are very limited and appear to be using Slack's legacy attachments framework._
 
+![custom slack notification from HubSpot workflow](images/hs_notifs.png)
+
 ## Create a custom Slack app
 
 You'll need to start by creating a custom Slack app in the Slack instance where you want your notifications to end up. Slack, like HubSpot is moving aware from generic incoming webhooks (generic api endpoints). This new setup is great because it keeps each app isolated and adds a layer or security.

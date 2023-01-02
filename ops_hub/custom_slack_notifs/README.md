@@ -268,3 +268,8 @@ def main(event):
 You don't need to include data outputs in your script if you don't need to use the outputs for anything. I left them here in case I wanted to use them in downstream actions, or to ensure I was getting the outputs I expected—_you could also just use python to print all these variable values_ 🤷
 
 ![data outputs from script screenshot](images/data_outputs.png)
+
+
+## Notes
+
+I'm trying to do a bit more work on error handling in the script. It hasn't failed often for my use cases (very far and inbetween, so far), but if/when it does fail, I'd like it to fail more gracefully.

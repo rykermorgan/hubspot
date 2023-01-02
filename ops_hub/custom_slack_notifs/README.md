@@ -18,7 +18,7 @@ The basic concept of the script I've written would work for any object in HubSpo
 
 ### Secrets
 
-![create secret screenshot](~/images/create_secret.png)
+![create secret screenshot](images/create_secret.png)
 
 ### Property to include in code
 

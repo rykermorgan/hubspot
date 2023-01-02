@@ -17,9 +17,11 @@ Once you've followed Slack's instructions for setting up the app you can generat
 The basic concept of the script I've written would work for any object in HubSpot (workflow type), but in this example and sample code it's running on a contact workflow.
 
 ### Secrets
-screenies
+
+![create secret screenshot](/images/create_secret.png)
 
 ### Property to include in code
+
 screenies
 
 ### Code

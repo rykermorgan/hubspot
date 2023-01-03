@@ -1,6 +1,6 @@
 # Using Ops Hub for custom Slack notifications
 
-This is a quick rundown on how to use HubSpot custom code actions in a workflow to create custom slack notifications using Slack's Block Kit framework. 
+This is a quick rundown on how to use HubSpot custom code actions in a workflow to create custom slack notifications using Slack's Block Kit framework.
 
 _HubSpot has native support for Slack, but the notifications are very limited and appear to be using Slack's legacy attachments framework._
 
@@ -10,14 +10,13 @@ _HubSpot has native support for Slack, but the notifications are very limited an
 
 You'll need to start by creating a custom Slack app in the Slack instance where you want your notifications to end up. Slack, like HubSpot is moving aware from generic incoming webhooks (generic api endpoints). This new setup is great because it keeps each app isolated and adds a layer or security.
 
-You can create your own app at [https://api.slack.com/apps](https://api.slack.com/apps). 
+You can create your own app at [https://api.slack.com/apps](https://api.slack.com/apps).
 
 Once you've followed Slack's instructions for setting up the app you can generate an incoming webhook specifically for this app. You can do that now, and we'll use it later.
 
 ## Setting up your custom code action
 
 The basic concept of the script I've written would work for any object in HubSpot (workflow type), but in this example and sample code it's running on a contact workflow.
-
 
 ### Secrets
 
@@ -33,13 +32,11 @@ After you've created your secrets, make sure you select all the ones you plan to
 
 ![workflow selected secrets screenshot](images/selected_secrets.png)
 
-
 ### Properties to include in the script
 
 In the screenshot below are the properties I included in the code. Change these according to your own needs, but remember you'll want to update the references in the script below to match/include whatever changes you make.
 
 ![properties in code screenshot](images/props_in_code.png)
-
 
 ### Code
 
@@ -264,13 +261,11 @@ def main(event):
 	}
 ```
 
-
 ### Data outputs
 
 You don't need to include data outputs in your script if you don't need to use the outputs for anything. I left them here in case I wanted to use them in downstream actions, or to ensure I was getting the outputs I expected—_you could also just use python to print all these variable values_ 🤷
 
 ![data outputs from script screenshot](images/data_outputs.png)
-
 
 ## Notes
 

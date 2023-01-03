@@ -1,3 +1,4 @@
 # exclude
 .markdownlint.json
 temp/
+**/.DS_Store

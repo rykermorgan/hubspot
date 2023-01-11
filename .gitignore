@@ -3,6 +3,7 @@
 temp/
 **/.DS_Store
 **
+**/custom_slack_opportunity_notif.py
 
 # temp ignore projects in progress
 cp_value_cbe_prop/

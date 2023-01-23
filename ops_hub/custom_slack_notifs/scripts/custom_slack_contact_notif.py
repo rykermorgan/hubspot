@@ -171,7 +171,7 @@ def main(event):
 							'type': 'plain_text',
 							'text': ':outreach: Search in Outreach',
 						},
-						'url': f'https://app1c.outreach.io/prospects?sortBy=touchedAt&sortDirection=desc&search={email}' # new comment
+						'url': f'https://app1c.outreach.io/prospects?sortBy=touchedAt&sortDirection=desc&search={email}'
 					}
 				]
 			}

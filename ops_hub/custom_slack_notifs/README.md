@@ -54,8 +54,6 @@ import json
 
 def main(event):
 
-
-
 	# set env variables
 	api_key = os.getenv('HAPIKEY')
 	hs_portal = os.getenv('hs_portal')
@@ -63,8 +61,6 @@ def main(event):
 	growth_ops_testing_channel = os.getenv('growth_ops_testing_webhook')
 	sfdc_url = os.getenv('sfdc_url')
 	amplitude_search = os.getenv('amplitude_search')
-
-
 
 	# set variable values to be used by slack_data payload
 	email = event.get('inputFields').get('email')
@@ -84,12 +80,8 @@ def main(event):
 	recent_form_page = event.get('inputFields').get('recent_form_page')
 	seg_anon_id = event.get('inputFields').get('segment_anonymous_id__c')
 
-
-
 	# coalesce sfdc contact/lead id into global id for link in slack_data payload
 	sfdc_id = salesforcecontactid or salesforceleadid
-
-
 
 	# get owner name from hubspot_owner_id (owner)
 	hubapi_url = f'https://api.hubapi.com/crm/v3/owners/{owner}'
@@ -110,8 +102,6 @@ def main(event):
 		owner_email = event['email']
 	else:
 		pass
-
-
 
 	# hi hs_notifications channel webhook
 	webhook_url = hs_notifications_channel
@@ -221,6 +211,14 @@ def main(event):
 							'text': ':amplitude: Search in Amplitude',
 						},
 						'url': f'{amplitude_search}email%3D{email}'
+					},
+					{
+						'type': 'button',
+						'text': {
+							'type': 'plain_text',
+							'text': ':outreach: Search in Outreach',
+						},
+						'url': f'https://app1c.outreach.io/prospects?sortBy=touchedAt&sortDirection=desc&search={email}'
 					}
 				]
 			}
@@ -237,8 +235,6 @@ def main(event):
 			'Request to slack returned an error %s, the response is:\n%s'
 			% (response.status_code, response.text)
 		)
-
-
 
 	# hs return data for use in later workflow actions
 	return {
@@ -259,6 +255,7 @@ def main(event):
 			'seg_anon_id': seg_anon_id
 		}
 	}
+
 ```
 
 ### Data outputs

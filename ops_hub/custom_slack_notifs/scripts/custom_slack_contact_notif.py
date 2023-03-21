@@ -32,6 +32,9 @@ def main(event):
 	contact_id = event.get('inputFields').get('hs_object_id')
 	recent_form_page = event.get('inputFields').get('recent_form_page')
 	seg_anon_id = event.get('inputFields').get('segment_anonymous_id__c')
+	company_name = event.get('inputFields').get('company')
+	referrer = event.get('inputFields').get('referrer')
+
 
 	# coalesce sfdc contact/lead id into global id for link in slack_data payload
 	sfdc_id = salesforcecontactid or salesforceleadid
@@ -91,11 +94,11 @@ def main(event):
 				'fields': [
 					{
 						'type': 'mrkdwn',
-						'text': f'*Owner:*\n{owner_fname} {owner_lname}'
+						'text': f'*Company:*\n{company_name}'
 					},
 					{
 						'type': 'mrkdwn',
-						'text': f'*Land Page:*\n{landing_page}'
+						'text': f'*Owner:*\n{owner_fname} {owner_lname}'
 					}
 				]
 			},
@@ -104,7 +107,20 @@ def main(event):
 				'fields': [
 					{
 						'type': 'mrkdwn',
+						'text': f'*Land Page:*\n{landing_page}'
+					},
+					{
+						'type': 'mrkdwn',
 						'text': f'*Conversion Page:*\n{recent_form_page}'
+					}
+				]
+			},
+			{
+				'type': 'section',
+				'fields': [
+					{
+						'type': 'mrkdwn',
+						'text': f'*Referrer:*\n{referrer}'
 					},
 					{
 						'type': 'mrkdwn',
@@ -205,6 +221,8 @@ def main(event):
 			'utm_term': utm_term,
 			'sfdc_id': sfdc_id,
 			'contact_id': contact_id,
-			'seg_anon_id': seg_anon_id
+			'seg_anon_id': seg_anon_id,
+			'company_name': company_name,
+			'referrer': referrer
 		}
 	}

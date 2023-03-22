@@ -120,7 +120,8 @@ def main(event):
 				'fields': [
 					{
 						'type': 'mrkdwn',
-						'text': f'*Referrer:*\n{referrer}'
+						'text': f'*Referrer:*\n{referrer}',
+						'verbatim': True
 					},
 					{
 						'type': 'mrkdwn',

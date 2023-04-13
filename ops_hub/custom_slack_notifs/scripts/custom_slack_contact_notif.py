@@ -21,19 +21,19 @@ def main(event):
 	lastname = event.get('inputFields').get('lastname')
 	jobtitle = event.get('inputFields').get('jobtitle')
 	owner = event.get('inputFields').get('hubspot_owner_id')
-	landing_page = event.get('inputFields').get('landing_page')
-	utm_source = event.get('inputFields').get('utm_source')
-	utm_medium = event.get('inputFields').get('utm_medium')
-	utm_campaign = event.get('inputFields').get('utm_campaign')
-	utm_content = event.get('inputFields').get('utm_content')
-	utm_term = event.get('inputFields').get('utm_term')
+	landing_page = event.get('inputFields').get('landing_page') or '-'
+	utm_source = event.get('inputFields').get('utm_source') or '-'
+	utm_medium = event.get('inputFields').get('utm_medium') or '-'
+	utm_campaign = event.get('inputFields').get('utm_campaign') or '-'
+	utm_content = event.get('inputFields').get('utm_content') or '-'
+	utm_term = event.get('inputFields').get('utm_term') or '-'
 	salesforceleadid = event.get('inputFields').get('salesforceleadid')
 	salesforcecontactid = event.get('inputFields').get('salesforcecontactid')
 	contact_id = event.get('inputFields').get('hs_object_id')
-	recent_form_page = event.get('inputFields').get('recent_form_page')
+	recent_form_page = event.get('inputFields').get('recent_form_page') or '-'
 	seg_anon_id = event.get('inputFields').get('segment_anonymous_id__c')
 	company_name = event.get('inputFields').get('company')
-	referrer = event.get('inputFields').get('referrer')
+	referrer = event.get('inputFields').get('referrer') or '-'
 
 
 	# coalesce sfdc contact/lead id into global id for link in slack_data payload

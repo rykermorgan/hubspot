@@ -1,6 +1,6 @@
 # exclude
 .markdownlint.json
-temp/
+other/
 **/.DS_Store
 
 # temp ignore projects in progress
